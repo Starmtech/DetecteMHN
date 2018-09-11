@@ -9,7 +9,7 @@ import ssl
 class Detectionmhn:
 
     def __init__(self, url):
-        self.url = "starmtech.fr"
+        self.url = url
         self.status = "false"
         self.code = "404"
 
@@ -18,7 +18,7 @@ class Detectionmhn:
 
     def CheckURL(self):
         useragent = {'User-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0'}
-        req = "/api/script/?text=true&script_id=1"
+        req = "/ui/login/?next=%2F"
         try:
             conn = httplib.HTTPSConnection(self.url, context=ssl._create_unverified_context())
             conn.request("HEAD", req, headers = useragent)
